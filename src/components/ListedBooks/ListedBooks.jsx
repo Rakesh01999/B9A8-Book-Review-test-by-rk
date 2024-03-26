@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { getStoredBookRead } from '../../utility/localstorage';
+import { getStoredBookRead, getStoredBookWish } from '../../utility/localstorage';
 import { CiLocationOn } from "react-icons/ci";
 import { IoPeople } from "react-icons/io5";
 import { MdOutlineFindInPage } from "react-icons/md";
@@ -9,6 +9,7 @@ const ListedBooks = () => {
     const books = useLoaderData();
 
     const [readBooks, setReadBooks] = useState([]);
+    const [wishBooks, setWishBooks] = useState([]);
     const [displayBooks, setDisplayBooks] = useState([]);
 
     // const handleBookFilter = filter => {
@@ -54,6 +55,7 @@ const ListedBooks = () => {
     
 
     // console.log(books.length)
+    // read
     useEffect(() => {
         const storedBookIds = getStoredBookRead();
         if (books.length > 0) {
@@ -71,6 +73,30 @@ const ListedBooks = () => {
             // console.log(books, storedBookIds, bookRead);
         }
     }, [books])
+
+    // wish
+    useEffect(() => {
+        const storedBookIds = getStoredBookWish();
+        if (books.length > 0) {
+            const bookWish = [];
+            for (const id of storedBookIds) {
+                const book = books.find(book => book.bookId === id);
+                if (book) {
+                    bookWish.push(book);
+                }
+            }
+            setWishBooks(bookWish);
+        }
+    }, [books])
+
+    const handleWish = bookId => {
+        saveBookWish(bookId);
+        const book = books.find(book => book.bookId === bookId);
+        if (book) {
+            setWishBooks(prevWishBooks => [...prevWishBooks, book]);
+        }
+    }
+
     return (
         <div>
             <div className='bg-[#1313130D] md:w-[1900px] h-[100px] mx-28 p-6 text-center'>
@@ -149,7 +175,9 @@ const ListedBooks = () => {
                     </div>
 
                     <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Wishlist Books" />
-                    <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">Wishlist Books</div>
+                    <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
+                        {/* Wishlist Books:{bookWish.length} */}
+                    </div>
 
                 </div>
             </div>
