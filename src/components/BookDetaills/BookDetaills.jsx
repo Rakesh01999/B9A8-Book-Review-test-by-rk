@@ -1,7 +1,9 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { saveBookRead, saveBookWish } from "../../utility/localstorage";
+import { saveBookRead, saveBookWish, getStoredBookRead, getStoredBookWish } from "../../utility/localstorage";
+// import { saveBookRead, saveBookWish, getStoredBookRead } from "../../utility/localstorage";
+
 
 const BookDetaills = () => {
         
@@ -16,8 +18,14 @@ const BookDetaills = () => {
 
     const handleRead =() => {
         // saveBookRead(bookId);
-        saveBookRead(idInt);
-        toast('Books added to Read List');
+          const storedBookRead = getStoredBookRead();
+          console.log(storedBookRead);
+        if (!storedBookRead.includes(idInt)) {
+            saveBookRead(idInt);
+            toast.success('Book added to Read List');
+        } else {
+            toast.warning('Book already in Read List');
+        }
     }
     
     // const handleWish =() => {
@@ -25,9 +33,27 @@ const BookDetaills = () => {
     //     saveBookWish(idInt);
     // }
 
+    // recent commented
+
+    // const handleWish = () => {
+    //     toast('Book added to Wishlist');
+    //     saveBookWish(idInt); // Use idInt instead of bookId
+    // };
+
     const handleWish = () => {
-        toast('Book added to Wishlist');
-        saveBookWish(idInt); // Use idInt instead of bookId
+        const storedBookRead = getStoredBookRead();
+        const storedBookWish = getStoredBookWish();
+        console.log(storedBookWish);
+        if (storedBookRead.includes(idInt)) {
+            toast.warn('Book is already in Read List');
+        } else {
+            if (!storedBookWish.includes(idInt)) {
+                saveBookWish(idInt);
+                toast.success('Book added to Wishlist');
+            } else {
+                toast.warn('Book is already in Wishlist');
+            }
+        }
     };
     
 
