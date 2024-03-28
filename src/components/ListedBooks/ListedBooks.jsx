@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { getStoredBookRead, getStoredBookWish } from '../../utility/localstorage';
 import { CiLocationOn } from "react-icons/ci";
 import { IoPeople } from "react-icons/io5";
@@ -51,7 +51,7 @@ const ListedBooks = () => {
         setDisplayBooks(filteredBooks);
         setDisplayWishBooks(filteredWishBooks);
     }
-    
+
 
     // read
     useEffect(() => {
@@ -121,13 +121,13 @@ const ListedBooks = () => {
                 </details>
             </div>
 
-            <div className='md:w-[1900px] mx-28 p-6 text-center mt-6'>
+            <div className='md:w-[1900px] mx-28 p-6 mt-6'>
                 <div role="tablist" className="tabs tabs-lifted">
                     <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Read Books" checked />
                     <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
 
                         <div>
-                        <h2 className='text-[28px] font-bold'>Read Books: {readBooks.length}</h2>
+                            <h2 className='text-[28px] font-bold'>Read Books: {readBooks.length}</h2>
                             {
                                 displayBooks.map(book => <div key={book.bookId}>
                                     {/* <span>{book.bookName}</span> */}
@@ -163,7 +163,9 @@ const ListedBooks = () => {
                                             <div className='flex gap-4'>
                                                 <p className='bg-[#328EFF26] rounded-2xl text-[#328EFF] text-[16px] w-[174px]'>Category: {book.category}</p>
                                                 <p className='bg-[#FFAC3326] rounded-2xl text-[#FFAC33] text-[16px] w-[174px]'>Rating: {book.rating}</p>
-                                                <button className='btn w-[150px] h-[] bg-[#23BE0A] rounded-3xl text-white text-[18px]'>View Details</button>
+                                                <Link to={`/book/${book.bookId}`}>
+                                                    <button className='btn w-[150px] h-[] bg-[#23BE0A] rounded-3xl text-white text-[18px]'>View Details</button>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
@@ -178,9 +180,9 @@ const ListedBooks = () => {
                     <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
                         {/* Wishlist Books:{bookWish.length} */}
 
-                            {/* wish books */}
+                        {/* wish books */}
                         <div>
-                        <h2 className='text-[28px] font-bold'>Wishlist Books:{wishBooks.length}</h2>
+                            <h2 className='text-[28px] font-bold'>Wishlist Books:{wishBooks.length}</h2>
                             {
                                 displayWishBooks.map(book => <div key={book.bookId}>
                                     {/* <span>{book.bookName}</span> */}

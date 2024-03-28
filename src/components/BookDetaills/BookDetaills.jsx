@@ -62,19 +62,22 @@ const BookDetaills = () => {
             <div className="text-center text-[32px] font-bold my-4">
                 <h2>Book Details</h2>
             </div>
-            <div className="flex flex-col md:flex-row md:w-[1900px] mx-32  gap-4">
-                <div className="w-[573px] h-[711px] rounded-2xl bg-[#1313130D]">
+            {/* <div className="flex flex-col md:flex-row md:w-[1800px] mx-auto  gap-10"> */}
+            <div className="md:w-[1800px] flex flex-col md:flex-row gap-10 mx-auto mb-10">
+                <div className="w-[573px] h-[711px] rounded-2xl bg-[#1313130D] p-20">
                     <img className="w-[425px] h-[564px]" src={book.image} alt="" />
                 </div>
-                <div>
+                <div className="w-[700px]">
                     <h2 className="text-[40px] font-bold">{book.bookName}</h2>
-                    <p>By: {book.author}</p>
-                    <p className="my-9">{book.category}</p>
-                    <p>{book.review}</p>
+                    <p className="text-[20px]">By: {book.author}</p>
+                    <div className="border-b-2 my-3"></div>
+                    <p className="my-6">{book.category}</p>
+                    <div className="border-b-2 my-3"></div>
+                    <p> <span className="font-bold">Review</span> {book.review}</p>
                     <div className="flex gap-4 my-4">
-                        <p>Tag:</p>
-                        <p className="bg-[#23BE0A0D] w-[100px] rounded-2xl text-[#23BE0A] text-center">{book.tags[0]}</p>
-                        <p className="bg-[#23BE0A0D] w-[100px] rounded-2xl text-[#23BE0A] text-center">{book.tags[1]}</p>
+                        <p className="font-bold">Tag:</p>
+                        <p className="bg-[#23BE0A0D] w-[100px] rounded-2xl text-[#23BE0A] text-center"># {book.tags[0]}</p>
+                        <p className="bg-[#23BE0A0D] w-[100px] rounded-2xl text-[#23BE0A] text-center"># {book.tags[1]}</p>
                     </div>
                     <div className="border-b-2 my-3"></div>
                     <div className="flex gap-4">
