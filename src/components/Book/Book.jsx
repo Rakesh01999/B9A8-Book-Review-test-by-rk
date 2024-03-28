@@ -7,7 +7,7 @@ const Book = ({ book }) => {
         <div className="my-10">
             <Link to={`/book/${bookId}`}>
                 <button>
-                    <div className="card bg-base-100 w-[374px] shadow-xl">
+                    <div className="card bg-base-100 w-[374px] md:w-[504px] shadow-xl">
                         <figure className="px-10 pt-10">
                             <img src={image} alt="Book" className="rounded-xl" />
                         </figure>

@@ -37,18 +37,18 @@ const PagesToRead = () => {
     };
 
     return (
-        <div className="mx-10 md:mx-96 mt-10">
-            <h1 className="text-2xl font-bold text-center">Chart</h1>
+        <div className="mx-10 md:mx-96 my-10">
+            <h1 className="text-2xl font-bold text-center my-6">Chart</h1>
             <BarChart
                 // width={1500} 
-                width={window.innerWidth > 1500 ? 768  : window.innerWidth - 80} // Adjusting  width for mobile view
+                width={window.innerWidth > 1600 ? 868  : window.innerWidth - 10} // Adjusting  width for mobile view
                     
                 height={600}
                 data={readBooks}
                 margin={{
                     top: 20,
                     right: 30,
-                    left: 20,
+                    left: 40,
                     bottom: 50,
                 }}
             >

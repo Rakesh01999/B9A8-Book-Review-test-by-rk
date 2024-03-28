@@ -4,13 +4,13 @@ import { FaBook, FaPencilAlt, FaUser } from 'react-icons/fa';
 
 const Blog = () => {
     return (
-        <div>
+        <div className='my-10'>
             <div className='flex flex-col items-center gap-6'>
                 <h1 className='text-5xl font-bold font-serif italic text-white text-center bg-green-400 w-[200px] rounded-full'>Blog</h1>
                 <p className='text-2xl font-semibold'>Welcome to our blog section. Explore our latest articles and posts.</p>
             </div>
 
-            <div className='md:w-[1800px] grid md:grid-cols-3 gap-5 mx-auto mb-10'>
+            <div className='md:w-[1800px] grid md:grid-cols-3 gap-5 mx-auto my-10'>
                 <div className="bg-white shadow-md rounded-lg p-6">
                     <FaBook className="text-4xl text-blue-500 mb-4 mx-auto" />
                     <h2 className="text-lg font-semibold text-gray-800 mb-2 ">Exploring the Legacy of William Shakespeare</h2>
