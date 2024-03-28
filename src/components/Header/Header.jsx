@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import './Header.css';
 
 const Header = () => {
 
@@ -9,6 +10,17 @@ const Header = () => {
         <li><NavLink to="/recommendations">Recommendations</NavLink></li>
         <li><NavLink to="/blog">Book Blog </NavLink></li>
     </>
+
+    // <div>
+    //     <nav>
+    //         <NavLink to="/">Home</NavLink>
+    //         <NavLink to="/listedBooks">Listed Books</NavLink>
+    //         <NavLink to="/pagesToRead">Pages to Read</NavLink>
+    //         <NavLink to="/recommendations">Recommendations</NavLink>
+    //         <NavLink to="/blog">Book Blog </NavLink>
+    //     </nav>
+    // </div>
+
     return (
         <div className="navbar bg-base-100 md:mx-10">
             <div className="navbar-start">
@@ -29,8 +41,8 @@ const Header = () => {
             </div>
             <div className="navbar-end">
                 <div className="flex gap-3">
-                <a className="btn bg-[#23BE0A] text-white w-[116px] h-[57px] text-[18px]">Sign In</a>
-                <a className="btn bg-[#59C6D2] text-white w-[116px] h-[57px] text-[18px]">Sign Up</a>
+                    <a className="btn bg-[#23BE0A] text-white w-[116px] h-[57px] text-[18px]">Sign In</a>
+                    <a className="btn bg-[#59C6D2] text-white w-[116px] h-[57px] text-[18px]">Sign Up</a>
                 </div>
             </div>
         </div>
