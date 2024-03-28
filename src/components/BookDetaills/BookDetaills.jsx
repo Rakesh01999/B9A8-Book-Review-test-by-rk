@@ -59,7 +59,7 @@ const BookDetaills = () => {
 
     return (
         <div>
-            <div className="text-center text-[32px] font-bold my-4">
+            <div className="text-center text-[32px] font-bold my-7">
                 <h2>Book Details</h2>
             </div>
             {/* <div className="flex flex-col md:flex-row md:w-[1800px] mx-auto  gap-10"> */}
@@ -67,7 +67,7 @@ const BookDetaills = () => {
                 <div className="w-[573px] h-[711px] rounded-2xl bg-[#1313130D] p-20">
                     <img className="w-[425px] h-[564px]" src={book.image} alt="" />
                 </div>
-                <div className="w-[700px]">
+                <div className="w-[700px] p-6">
                     <h2 className="text-[40px] font-bold">{book.bookName}</h2>
                     <p className="text-[20px]">By: {book.author}</p>
                     <div className="border-b-2 my-3"></div>

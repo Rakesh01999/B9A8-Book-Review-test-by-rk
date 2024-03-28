@@ -9,7 +9,7 @@ const PagesToRead = () => {
     const books = useLoaderData();
     const [readBooks, setReadBooks] = useState([]);
 
-    // Fetch read books from local storage
+    // Fetch read books from loacal storage
     useEffect(() => {
         const storedBookIds = getStoredBookRead();
         if (books.length > 0) {
@@ -40,8 +40,10 @@ const PagesToRead = () => {
         <div className="mx-10 md:mx-96 mt-10">
             <h1 className="text-2xl font-bold text-center">Chart</h1>
             <BarChart
-                width={1500} // Adjust width as needed
-                height={500}
+                // width={1500} 
+                width={window.innerWidth > 1500 ? 768  : window.innerWidth - 80} // Adjusting  width for mobile view
+                    
+                height={600}
                 data={readBooks}
                 margin={{
                     top: 20,

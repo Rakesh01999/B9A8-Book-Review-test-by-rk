@@ -139,7 +139,7 @@ const ListedBooks = () => {
                                         <div className="flex flex-col gap-4">
                                             <h2 className="text-[24px] font-bold">{book.bookName}</h2>
                                             <p className='text-[16px] font-semibold'>By: {book.author}</p>
-                                            <div className="flex items-center gap-4">
+                                            <div className="flex flex-col md:flex-row items-center gap-4">
                                                 <div className='flex gap-4'>
                                                     <p className='text-[16px] font-bold'>Tag</p>
                                                     <p className='bg-[#23BE0A0D] text-[#23BE0A] text-[16px]'>{book.tags[0]}</p>
