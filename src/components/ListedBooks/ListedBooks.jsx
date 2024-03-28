@@ -14,7 +14,6 @@ const ListedBooks = () => {
     const [displayBooks, setDisplayBooks] = useState([]);
     const [displayWishBooks, setDisplayWishBooks] = useState([]);
 
-
     // orderly
     // const handleBookFilter = filter => {
     //     let filteredBooks = [...readBooks];
@@ -53,8 +52,6 @@ const ListedBooks = () => {
         setDisplayWishBooks(filteredWishBooks);
     }
     
-
-    // console.log(books.length)
 
     // read
     useEffect(() => {
