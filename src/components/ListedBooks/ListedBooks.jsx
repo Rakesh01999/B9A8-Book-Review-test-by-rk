@@ -121,18 +121,18 @@ const ListedBooks = () => {
                 </details>
             </div>
 
-            <div className='md:w-[1900px] mx-28 p-6 mt-6'>
+            <div className='md:w-[1900px] md:mx-28 p-6 mt-6'>
                 <div role="tablist" className="tabs tabs-lifted">
                     <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Read Books" checked />
                     <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
 
-                        <div>
+                        <div className='flex flex-col'>
                             <h2 className='text-[28px] font-bold'>Read Books: {readBooks.length}</h2>
                             {
                                 displayBooks.map(book => <div key={book.bookId}>
                                     {/* <span>{book.bookName}</span> */}
 
-                                    <div className="shadow-xl h-[278px] flex gap-6 p-6 mt-4">
+                                    <div className="shadow-xl md:h-[278px] flex gap-6 p-6 mt-4">
                                         <div className='w-[150px] h-[200px]'>
                                             <img src={book.image} alt="Book" />
                                         </div>
@@ -150,7 +150,7 @@ const ListedBooks = () => {
                                                     <span>Year of Publishing: {book.yearOfPublishing}</span>
                                                 </div>
                                             </div>
-                                            <div className='flex gap-4'>
+                                            <div className='flex flex-col md:flex-row gap-4'>
                                                 <div className='flex items-center gap-4'>
                                                     <IoPeople />
                                                     <p>Publisher: {book.publisher}</p>
@@ -160,7 +160,7 @@ const ListedBooks = () => {
                                                     <p>Page: {book.totalPages}</p>
                                                 </div>
                                             </div>
-                                            <div className='flex gap-4'>
+                                            <div className='flex flex-col md:flex-row gap-4'>
                                                 <p className='bg-[#328EFF26] rounded-2xl text-[#328EFF] text-[16px] w-[174px]'>Category: {book.category}</p>
                                                 <p className='bg-[#FFAC3326] rounded-2xl text-[#FFAC33] text-[16px] w-[174px]'>Rating: {book.rating}</p>
                                                 <Link to={`/book/${book.bookId}`}>

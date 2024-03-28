@@ -63,7 +63,7 @@ const BookDetaills = () => {
                 <h2>Book Details</h2>
             </div>
             {/* <div className="flex flex-col md:flex-row md:w-[1800px] mx-auto  gap-10"> */}
-            <div className="md:w-[1800px] flex flex-col md:flex-row gap-10 mx-auto mb-10">
+            <div className="md:w-[1800px] flex flex-col md:flex-row gap-10 mx-auto md:mx-96 mb-10">
                 <div className="w-[573px] h-[711px] rounded-2xl bg-[#1313130D] p-20">
                     <img className="w-[425px] h-[564px]" src={book.image} alt="" />
                 </div>
