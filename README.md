@@ -19,5 +19,4 @@ Keep track of reading progress for each book, including pages read, current chap
 Engage with fellow book enthusiasts through interactive features such as book reviews, ratings, and discussion forums, fostering a vibrant community of readers sharing insights, recommendations, and literary discussions.
 
 
-
 ## live site URL:https://book-review-assignment8.netlify.app/
